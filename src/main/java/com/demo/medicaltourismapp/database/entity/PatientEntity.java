@@ -1,16 +1,20 @@
 package com.demo.medicaltourismapp.database.entity;
 
 import com.demo.medicaltourismapp.util.dbutil.BaseEntity;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Data
+@Table
+@AttributeOverride(
+        name = "id",
+        column = @Column(
+                name = "patient_id"
+        )
+)
 public class PatientEntity extends BaseEntity {
 
     @Column

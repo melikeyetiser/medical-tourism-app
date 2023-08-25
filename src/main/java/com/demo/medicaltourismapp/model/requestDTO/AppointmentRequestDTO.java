@@ -9,4 +9,5 @@ import lombok.Data;
 public class AppointmentRequestDTO extends BaseDTO {
     private FlightEntity flight;
     private HotelEntity hotel;
+    private String doctorsNotes;
 }
