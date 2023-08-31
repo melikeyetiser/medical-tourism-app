@@ -22,12 +22,12 @@ public abstract class BaseController<
     protected abstract Service getService();
 
 
-    @GetMapping
+    @GetMapping("/get-all")
     public ResponseEntity<List<DTO>> getAll() {
         return new ResponseEntity<>(getService().getAll(), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<DTO> save(@RequestBody RequestDto requestDTO) {
         return new ResponseEntity<>(getService().save(requestDTO), HttpStatus.CREATED);
     }
@@ -38,7 +38,7 @@ public abstract class BaseController<
     }
 
 
-    @PutMapping("{uuid}")
+    @PutMapping("/{uuid}")
     public ResponseEntity<DTO> update(@PathVariable UUID uuid, @RequestBody RequestDto requestDTO) {
         if (getService().update(uuid, requestDTO) != null) {
             return new ResponseEntity<>(getService().update(uuid, requestDTO), HttpStatus.OK);
