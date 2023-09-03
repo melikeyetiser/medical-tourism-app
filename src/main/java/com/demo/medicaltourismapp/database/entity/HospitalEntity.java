@@ -1,5 +1,6 @@
 package com.demo.medicaltourismapp.database.entity;
 
+import com.demo.medicaltourismapp.model.enums.CityEnum;
 import com.demo.medicaltourismapp.util.dbutil.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,6 +22,9 @@ public class HospitalEntity extends BaseEntity {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<DoctorEntity> doctorEntityList;
+    private List<DoctorEntity> doctorList;
+
+    @Column
+    private CityEnum city;
 
 }

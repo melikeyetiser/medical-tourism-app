@@ -1,5 +1,6 @@
 package com.demo.medicaltourismapp.database.entity;
 
+import com.demo.medicaltourismapp.model.enums.CityEnum;
 import com.demo.medicaltourismapp.util.dbutil.BaseEntity;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
@@ -23,4 +24,10 @@ public class FlightEntity extends BaseEntity {
 
     @Column(nullable = false)
     private int capacity;
+
+    @Column(nullable = false)
+    private CityEnum fromCity;
+
+    @Column(nullable = false)
+    private CityEnum toCity;
 }

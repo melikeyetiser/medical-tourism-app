@@ -21,5 +21,9 @@ public class PatientEntity extends BaseEntity {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<AppointmentEntity> appointmentEntityList;
+    private List<AppointmentEntity> appointmentList;
+
+    // this will be used for the reservation timer
+    @Column
+    private boolean isSessionActive;
 }

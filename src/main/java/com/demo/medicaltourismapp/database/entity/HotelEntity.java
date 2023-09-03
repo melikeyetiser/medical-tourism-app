@@ -1,5 +1,6 @@
 package com.demo.medicaltourismapp.database.entity;
 
+import com.demo.medicaltourismapp.model.enums.CityEnum;
 import com.demo.medicaltourismapp.util.dbutil.BaseEntity;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
@@ -23,4 +24,7 @@ public class HotelEntity extends BaseEntity {
 
     @Column
     private int capacity;
+
+    @Column
+    private CityEnum city;
 }

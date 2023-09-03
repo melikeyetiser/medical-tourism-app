@@ -12,5 +12,6 @@ public class PatientRequestDTO extends BaseDTO {
 
     private String name;
     @JsonIgnore
-    private List<AppointmentEntity> appointmentEntityList;
+    private List<AppointmentEntity> appointmentList;
+    private boolean isSessionActive;
 }

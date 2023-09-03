@@ -1,5 +1,6 @@
 package com.demo.medicaltourismapp.database.entity;
 
+import com.demo.medicaltourismapp.model.enums.DoctorSpecialtyEnum;
 import com.demo.medicaltourismapp.util.dbutil.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,7 +22,10 @@ public class DoctorEntity extends BaseEntity {
     @JoinColumn(name = "doctor_id", nullable = false)
     private HospitalEntity hospital;
 
-    @OneToMany(mappedBy = "appointment_id", cascade = CascadeType.ALL)
-    private List<AppointmentEntity> appointmentEntityList;
+    @Column
+    private DoctorSpecialtyEnum doctorSpecialtyEnum;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<AppointmentEntity> appointmentList;
 
 }
